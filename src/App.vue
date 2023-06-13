@@ -1,84 +1,45 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+
 import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <nav class="flex items-center bg-pink-300 p-3 flex-wrap">
+    <a href="#" class="p-2 mr-4 inline-flex items-center">
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">FORMULARIO</RouterLink>
-      </nav>
+      <span class="text-xl text-black font-bold uppercase tracking-wide">Programación Web 2</span>
+    </a>
+    <button
+      class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
+      data-target="#navigation">
+      <i class="material-icons">
+        MENÚ
+      </i>
+    </button>
+    <div class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto" id="navigation">
+      <div
+        class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
+        <a href="#"
+          class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+          <span>
+            <RouterLink to="/">Inicio</RouterLink>
+          </span>
+        </a>
+        <a href="#"
+          class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+          <span>
+            <RouterLink to="/about">Registrar</RouterLink>
+          </span>
+        </a>
+        <a href="#"
+          class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+          <span>
+            <RouterLink to="/mostrar" class="py-5">Ver registro</RouterLink>
+          </span>
+        </a>
+
+      </div>
     </div>
-  </header>
-
+  </nav>
   <RouterView />
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
